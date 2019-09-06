@@ -13,8 +13,6 @@ public class Producto implements Parcelable {
     private String Precio;
     private String Anio;
     private String Materia;
-    private String Pago;
-    private String Estado;
     private String Foto;
 
 
@@ -96,21 +94,6 @@ public class Producto implements Parcelable {
         Materia = materia;
     }
 
-    public String getPago() {
-        return Pago;
-    }
-
-    public void setPago(String pago) {
-        Pago = pago;
-    }
-
-    public String getEstado() {
-        return Estado;
-    }
-
-    public void setEstado(String estado) {
-        Estado = estado;
-    }
 
     public String getFoto() {
         return Foto;
@@ -147,8 +130,6 @@ public class Producto implements Parcelable {
         dest.writeString(this.Vendedor);
         dest.writeString(this.Anio);
         dest.writeString(this.Materia);
-        dest.writeString(this.Pago);
-        dest.writeString(this.Estado);
         dest.writeString(this.Foto);
     }
 
@@ -159,8 +140,6 @@ public class Producto implements Parcelable {
         this.Vendedor = in.readString();
         this.Anio = in.readString();
         this.Materia = in.readString();
-        this.Pago = in.readString();
-        this.Estado = in.readString();
         this.Foto = in.readString();
     }
 

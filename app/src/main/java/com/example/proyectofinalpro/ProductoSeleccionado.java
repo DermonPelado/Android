@@ -1,8 +1,10 @@
 package com.example.proyectofinalpro;
 
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +15,7 @@ public class ProductoSeleccionado extends AppCompatActivity {
     TextView txvDescripcion;
     TextView txvPrecio;
     TextView txvVendedor;
+    ImageView imgFoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,10 @@ public class ProductoSeleccionado extends AppCompatActivity {
             String Precio = "$".concat(ProductoElegido.getPrecio());
             txvPrecio.setText(Precio);
 
+            TareaAsincronicaDescargarFoto DescargarFoto = new TareaAsincronicaDescargarFoto(); //Creo TareaAsincronicaDescargarFoto
+            DescargarFoto.setFoto(imgFoto);//Pongo la imagen del android de atributo para luego se le asigne la nueva foto
+            DescargarFoto.execute(ProductoElegido.getFoto()); //ejecuto la tarea y le mando como parametro la urldefoto
+
 
         } catch (Exception e) {
             Toast msg = Toast.makeText(getApplicationContext(), "Hubo un error. Intente de nuevo", Toast.LENGTH_SHORT);
@@ -62,6 +69,7 @@ public class ProductoSeleccionado extends AppCompatActivity {
         txvDescripcion = (TextView) findViewById(R.id.txvDescripcion);
         txvPrecio = (TextView) findViewById(R.id.txvPrecio);
         txvVendedor = (TextView) findViewById(R.id.txvVendedor);
+        imgFoto = (ImageView) findViewById(R.id.imgFoto);
 
     } //fin obtener referencias
 

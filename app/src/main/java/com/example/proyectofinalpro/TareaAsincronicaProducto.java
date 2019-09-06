@@ -17,7 +17,7 @@ import java.net.URL;
         protected Producto doInBackground(Integer... idProducto) { //mientras se ejecuta - recibe parametro
             Producto ProductoElegido = null;
             try {
-                String strIP = "10.152.2.6";//ip
+                String strIP = "10.152.2.42";//ip
                 String StrPuerto = ":52680";//puerto
                 String strURL = "http://" + strIP + StrPuerto + "/api/Producto/GetByID/" + Integer.toString(idProducto[0]); //ip de dermon + puerto + api + loquebusco*/
 

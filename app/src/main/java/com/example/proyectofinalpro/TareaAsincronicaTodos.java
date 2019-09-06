@@ -23,7 +23,7 @@ public class TareaAsincronicaTodos extends AsyncTask<Void, Void, Void> {
     protected Void doInBackground(Void... voids) { //mientras se ejecuta
 
         try {
-            String strIP = "10.152.2.6";//ip
+            String strIP = "10.152.2.42";//ip
             String StrPuerto = ":52680";//puerto
             String strURL = "http://" + strIP + StrPuerto + "/api/Productos"; //ip de dermon + puerto + api + loquebusco*/
 

@@ -36,7 +36,7 @@ public class CrearProducto extends AppCompatActivity {
 
     private String getServerResponse(String json){
         //Creo el HttpPost con la url a la que se le van a mandar los datos
-        HttpPost post = new HttpPost("http://10.152.2.79:52680/api/IngresarProducto");
+        HttpPost post = new HttpPost("http://10.152.2.42:52680/api/IngresarProducto");
         try{
             //StringEntity is the raw data that you send in the request.
             StringEntity entity = new StringEntity(json);
@@ -72,7 +72,6 @@ public class CrearProducto extends AppCompatActivity {
                 String foto = "Foto";
                 int IDAnio = 1;
                 int IDMateria = 1;
-                int IDEstado = 1;
                 // 1. Creo el JSONObject
                 JSONObject Mandar = new JSONObject();
                 // 2. Lleno el JSONObject
@@ -81,7 +80,6 @@ public class CrearProducto extends AppCompatActivity {
                 Mandar.put("Descripcion", strDescripcion);
                 Mandar.put("IDAnio", IDAnio);
                 Mandar.put("IDMateria", IDMateria);
-                Mandar.put("IDEstado", IDEstado);
                 Mandar.put("Foto", foto);
                 Mandar.put("Precio", intPrecio);
                 // 3. Convierto el JSONObject en un String y lo retorno
